@@ -1,0 +1,87 @@
+{
+    "name": "EveItemBrowser",
+    "settings": {
+        "exportPath": "",
+        "urlPrefix": "",
+        "spacesToIndent": 4,
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": false
+    },
+    "xdsVersion": "2.2.2",
+    "xdsBuild": 991,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000503,
+    "framework": "ext42",
+    "topInstanceFileMap": {
+        "8bc8fc3a-06f9-450a-90a7-553cf70220a8": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "0c552667-de6c-4052-9d68-90bc3f9b1cdf": {
+            "paths": [
+                "metadata/store/EveTreeStore",
+                "app/store/override/EveTreeStore.js",
+                "app/store/EveTreeStore.js"
+            ],
+            "className": "EveTreeStore"
+        },
+        "d2dba133-91e9-495b-af71-857a488813e1": {
+            "paths": [
+                "metadata/view/MyViewport",
+                "app/view/override/MyViewport.js",
+                "app/view/MyViewport.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "MyViewport"
+        },
+        "59c2de16-3cb7-4df6-8903-a0a26c0ff82a": {
+            "paths": [
+                "metadata/controller/MyController",
+                "app/controller/override/MyController.js",
+                "app/controller/MyController.js"
+            ],
+            "className": "MyController"
+        },
+        "cca35fc9-b30e-4290-b546-853521fc8b4b": {
+            "paths": [
+                "metadata/store/EveTypeStore",
+                "app/store/override/EveTypeStore.js",
+                "app/store/EveTypeStore.js"
+            ],
+            "className": "EveTypeStore"
+        },
+        "96915966-3bac-4490-ad4c-1c983cc101fb": {
+            "paths": [
+                "metadata/model/TypeData",
+                "app/model/override/TypeData.js",
+                "app/model/TypeData.js"
+            ],
+            "className": "TypeData"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "d2dba133-91e9-495b-af71-857a488813e1"
+        ],
+        "store": [
+            "0c552667-de6c-4052-9d68-90bc3f9b1cdf",
+            "cca35fc9-b30e-4290-b546-853521fc8b4b"
+        ],
+        "controller": [
+            "59c2de16-3cb7-4df6-8903-a0a26c0ff82a"
+        ],
+        "model": [
+            "96915966-3bac-4490-ad4c-1c983cc101fb"
+        ],
+        "resource": [
+            "8bc8fc3a-06f9-450a-90a7-553cf70220a8"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

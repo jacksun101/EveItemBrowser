@@ -1,0 +1,326 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "html": null,
+        "margin": null,
+        "designer|userClassName": "MyViewport",
+        "designer|initialView": true,
+        "layout": "border"
+    },
+    "designerId": "d2dba133-91e9-495b-af71-857a488813e1",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center",
+                "container|padding": null,
+                "frame": true,
+                "layout": "border",
+                "title": "EVE Item Browser"
+            },
+            "designerId": "f9044bcf-a6c2-400d-b8c9-52ffa4cf1990",
+            "cn": [
+                {
+                    "type": "Ext.tree.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|margins": null,
+                        "layout|region": "west",
+                        "dock": null,
+                        "autoRender": null,
+                        "itemId": "categoriesPanel",
+                        "padding": "0 4 0 0",
+                        "width": 400,
+                        "resizable": true,
+                        "resizeHandles": "e",
+                        "icon": null,
+                        "iconCls": null,
+                        "title": "Categories",
+                        "store": "EveTreeStore",
+                        "displayField": "marketGroupName"
+                    },
+                    "configAlternates": {
+                        "resizable": "boolean"
+                    },
+                    "designerId": "df47e979-6c58-4714-b37d-df90b487645f",
+                    "isBuiltIn": true,
+                    "iconCls": "icon-treegridpanel",
+                    "autoName": "TreeGrid",
+                    "cn": [
+                        {
+                            "type": "Ext.tree.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "rootVisible": false
+                            },
+                            "designerId": "b9e97ac8-4719-427b-9534-9722846a7f0f"
+                        },
+                        {
+                            "type": "Ext.tree.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "maxWidth": 300,
+                                "minWidth": 150,
+                                "width": null,
+                                "defaultWidth": null,
+                                "dataIndex": "marketGroupName",
+                                "text": "英文名稱",
+                                "flex": 4
+                            },
+                            "designerId": "05cc9de3-4907-4ca0-93aa-4ce3029b4e9a"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "autoRender": false,
+                                "hidden": true,
+                                "hideMode": null,
+                                "overflowX": null,
+                                "overflowY": null,
+                                "dataIndex": "description",
+                                "text": "英文說明",
+                                "flex": 3
+                            },
+                            "designerId": "2feef0e1-aa8a-4c03-bc1d-c1edfe95beac"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "maxWidth": 150,
+                                "sortable": false,
+                                "dataIndex": "nameText",
+                                "text": "中文名稱",
+                                "flex": 1
+                            },
+                            "designerId": "9d4b407c-f7ab-4747-8d3a-f97e008527f5"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "sortable": false,
+                                "dataIndex": "descText",
+                                "text": "中文說明",
+                                "flex": 1
+                            },
+                            "designerId": "b8657b68-ff0c-41b1-bc64-d470e1027c37"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCategoriesPanelItemClick",
+                                "implHandler": [
+                                    "if(record.get('leaf')) {\r",
+                                    "\r",
+                                    "    /*Ext.Msg.alert('Clicked on a Tree Node', \r",
+                                    "    'Node marketGroupID:' + record.get('marketGroupID') + '\\n\\r' +\r",
+                                    "    'Node marketGroupName: ' + record.get('marketGroupName') + '\\n\\r' +\r",
+                                    "    'Node parentGroupID: ' + record.get('parentGroupID') + '\\n\\r' +\r",
+                                    "    'Is it a leaf?: ' + record.get('leaf') + '\\n' +\r",
+                                    "    'No of Children: ' + record.childNodes.length\r",
+                                    "    );*/\r",
+                                    "\r",
+                                    "    var listPanel = this.down('#itemListPanel');\r",
+                                    "    listPanel.store.load({\r",
+                                    "        params: {\r",
+                                    "            marketGroupID: record.get('marketGroupID')\r",
+                                    "        }\r",
+                                    "    });\r",
+                                    "\r",
+                                    "}"
+                                ],
+                                "name": "itemclick",
+                                "scope": "me"
+                            },
+                            "designerId": "bd42b592-b2dc-4a45-92d7-df5095e57e9a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|region": "center",
+                        "itemId": "itemListPanel",
+                        "title": "Item List",
+                        "store": "EveTypeStore"
+                    },
+                    "designerId": "0437373e-5eaa-41d8-8ea1-f7b674127638",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "itemId": "",
+                                "minHeight": null
+                            },
+                            "designerId": "d9e0168c-5134-4abf-ae80-b201b9cba792"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "dataIndex": "marketGroupID",
+                                "text": "MarketGroupID",
+                                "flex": 1
+                            },
+                            "designerId": "fb6bf322-ae5a-4fde-aa58-c1fc46060bbc"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "dataIndex": "typeID",
+                                "text": "TypeID",
+                                "flex": 1
+                            },
+                            "designerId": "5ac93d03-bb92-4e6f-818a-8ce2d946b29b"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "name",
+                                "text": "項目名稱",
+                                "flex": 2
+                            },
+                            "designerId": "9da8810d-f1f5-4b66-9b65-a4445df8db89",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "renderer",
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "implHandler": [
+                                            "return '<img src=\"http://gm.omatic.com.tw/eve-toolkit/Types/' + record.data['typeID'] + '_64.png\" width=\"64px\" height=\"64px\"><br/>' + record.data['typeName'] + '<br/><br/>' + record.data['name'];"
+                                        ]
+                                    },
+                                    "designerId": "2c856d73-4a4b-42fe-9e12-5576354bff4b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "description",
+                                "text": "項目說明",
+                                "flex": 9
+                            },
+                            "designerId": "aa09e644-6e88-428b-bc9f-edeea606c41a",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "renderer",
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "implHandler": [
+                                            "return '<div style=\"white-space:normal !important;\">'\r",
+                                            "+ Ext.util.Format.stripTags(value).replace(/\\n/g, '<br/>') +\r",
+                                            "'</div>';"
+                                        ]
+                                    },
+                                    "designerId": "bf154601-2b99-478f-a2ce-3789d6b9acb0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

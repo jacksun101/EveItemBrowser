@@ -1,0 +1,130 @@
+{
+    "type": "Ext.data.TreeStore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "autoSync": true,
+        "storeId": "MyTreeStore1",
+        "designer|userClassName": "EveTreeStore",
+        "root": [
+            "{  \r",
+            "    expanded: true  \r",
+            "}  "
+        ]
+    },
+    "designerId": "0c552667-de6c-4052-9d68-90bc3f9b1cdf",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "http://localhost/sencha/EveItemBrowser/data/eve.json"
+            },
+            "designerId": "11030390-29fc-451e-af76-9de1e64424c8",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "d729ecd9-dc23-411d-a5dd-72aa0406e977"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "marketGroupID"
+            },
+            "designerId": "10a30267-0208-44f5-92cd-0b2cba4c79cd"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "parentGroupID"
+            },
+            "designerId": "7c406b34-7378-46e9-a1ca-92633b31f74c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "marketGroupName"
+            },
+            "designerId": "23923d54-9469-4de5-a36c-b63d39e3cb1c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "",
+                "name": "nameText"
+            },
+            "designerId": "bd92d3ec-eab1-4a48-be9a-6dda73ed0b19"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descText"
+            },
+            "designerId": "e4f2e0f3-ac0c-402a-bfc3-ace71663f39e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "description"
+            },
+            "designerId": "26967d68-e3ab-4e93-80e7-64dde9b48a75"
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "marketGroupName"
+            },
+            "designerId": "34c587d8-590e-4e2d-b0b7-f5085e696b9d"
+        }
+    ]
+}

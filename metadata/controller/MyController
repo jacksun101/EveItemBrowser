@@ -1,0 +1,36 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "stores": [
+            "CarDataStore"
+        ],
+        "designer|userClassName": "MyController"
+    },
+    "designerId": "59c2de16-3cb7-4df6-8903-a0a26c0ff82a",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "loadList",
+                "designer|params": [
+                    "marketGroupID"
+                ],
+                "implHandler": [
+                    "Ext.Msg.alert('marketGroupID: ' + marketGroupID);\r",
+                    "CarDataStore.load();"
+                ]
+            },
+            "designerId": "2c856186-ac93-4bdc-82e4-80dbaea66feb"
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "TypeData",
+        "storeId": "MyJsonStore",
+        "designer|userClassName": "EveTypeStore"
+    },
+    "designerId": "cca35fc9-b30e-4290-b546-853521fc8b4b",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "extraParams": [
+                    "{marketGroupID: 471}"
+                ],
+                "url": "http://local.pyrocms/sample/test"
+            },
+            "designerId": "a18f4e4e-7b5d-4bda-a240-464fdef39424",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": null
+                    },
+                    "designerId": "f7c3594c-a737-4e73-8613-208e96924f12"
+                }
+            ]
+        }
+    ]
+}
